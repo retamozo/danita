@@ -1,17 +1,10 @@
 import React from "react";
 import "./style.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { ROUTES } from "../routes/components";
+import DanaeFlow  from "../Containers/DanaeFlow";
 
 const App = () => (
   <React.StrictMode>
-    <Router>
-      <Switch>
-        {ROUTES.map(({ pathname, component: Component }) => (
-          <Route path={pathname} component={Component} />
-        ))}
-      </Switch>
-    </Router>
+    <DanaeFlow />
   </React.StrictMode>
 );
 

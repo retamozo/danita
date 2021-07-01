@@ -1,10 +1,10 @@
-import React, { Dispatch, FunctionComponent, SetStateAction } from "react";
-import styled from "styled-components";
-import { Step } from ".";
+import { Button } from "../../../components";
+import { Step } from "@/types";
+import React, { FunctionComponent } from "react";
 
-const Initial: FunctionComponent<{
-  onContinue: () => void;
-}> = ({ onContinue }) => {
+export const Initial: FunctionComponent<{
+  goToView: (view: Step) => void
+}> = ({ goToView }) => {
   return (
     <div>
       <h1 style={{ margin: "10px 0" }}>Hola gorda 😍</h1>
@@ -17,18 +17,8 @@ const Initial: FunctionComponent<{
           es por eso que decidi hacer este mini cuestionario para {""}
           que puedas elegir que te gustaría hacer 🐷🍿😋
         </p>
-        <Button onClick={onContinue}>Oki ✔️</Button>
+        <Button onClick={goToView}>Oki ✔️</Button>
       </div>
     </div>
   );
 };
-
-const Button = styled.button`
-  background: #ffffff;
-  appearance: none;
-  width: 50%;
-  border-radius: 7px;
-  margin-top: 50px;
-`;
-
-export default Initial;
